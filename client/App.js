@@ -2,18 +2,17 @@ import React from 'react'
 import $ from "jquery";
 // import BLOCKTYPE from './constants';
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {blocks: [{"type": "code", "owner": "Nithanaroy", "repo": "learning_react", "commit": "d15583f92190b28741b177b9a51ec32c034504a0"}]};
-  }
-  handleNewBlock(block) {
+let App = React.createClass({
+  getInitialState: function() {
+    return {blocks: [{"type": "code", "owner": "Nithanaroy", "repo": "learning_react", "commit": "d15583f92190b28741b177b9a51ec32c034504a0"}]};
+  },
+  handleNewBlock: function(block) {
     let blocks = this.state.blocks;
-    blocks.concat([block]);
+    let newBlocks = blocks.concat([block]);
     // TODO: Save to server
-    this.setState(blocks);
-  }
-  render() {
+    this.setState({blocks: newBlocks});
+  },
+  render: function() {
     let blockNodes = this.state.blocks.map(function(block) {
       if(block.type === 'code') {
         return (
@@ -38,7 +37,7 @@ class App extends React.Component {
       </div>
     );
   }
-}
+});
 
 App.propTypes = {} // data types and validations for each property
 App.defaultProps = {} // default property values
@@ -72,18 +71,17 @@ class Code extends React.Component {
   }
 }
 
-class Form extends React.Component {
-  constructor() {
-    super();
-    this.state = {owner: '', repo: '', commit: ''};
-  }
-  handleNewCodeBlock(e) {
+var Form = React.createClass({
+  getInitialState: function() {
+    return {owner: '', repo: '', commit: ''};
+  },
+  handleNewCodeBlock: function(e) {
     e.preventDefault();
     let block = Object.assign({}, {type: 'code'}, this.state);
     this.props.onFormSubmit(block);
     return false;
-  }
-  handleChange(e) {
+  },
+  handleChange: function(e) {
     switch (e.target.id) {
       case 'owner':
         this.setState({owner: e.target.value});
@@ -96,8 +94,8 @@ class Form extends React.Component {
         break;
       default:
     }
-  }
-  render() {
+  },
+  render: function() {
     return (
       <form onSubmit={this.handleNewCodeBlock}>
         <p>Owner:</p> <input id='owner' type='text' value={this.state.owner} />
@@ -107,6 +105,6 @@ class Form extends React.Component {
       </form>
     );
   }
-}
+});
 
 export default App
