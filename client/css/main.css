@@ -1,0 +1,22 @@
+.code-box {
+  background: #f8f5ec;
+  color: #333333;
+  font-family: proxima-nova,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+}
+
+.code-box-header {
+  background: #f1ede4;
+  color: #c2c0bc;
+  font-size: 12px;
+}
+
+.code-box-code {
+  font-family: 'source-code-pro', Menlo, Consolas, 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.code-box-change {
+  background-color: #f7ebc6;
+  border-left: 5px solid #f7d87c;
+}

@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server to interact with Github APIs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Nithanaroy/teach_with_code.git"
+  },
+  "keywords": [
+    "github",
+    "api"
+  ],
+  "author": "Nitin Pasumarthy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nithanaroy/teach_with_code/issues"
+  },
+  "homepage": "https://github.com/Nithanaroy/teach_with_code#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "node-rest-client": "^1.8.0"
+  }
+}
